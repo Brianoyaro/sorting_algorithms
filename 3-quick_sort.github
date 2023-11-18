@@ -25,6 +25,7 @@ int partition(int *array, size_t low, size_t high)
 	int pivot = 0, temp = 0;
 	size_t i = 0, j = 0;
 
+	printf("in partition, low is %ld while high is %ld\n", low, high);
 	pivot = array[high];
 	/*lowest index so far*/
 	i = low;
@@ -37,7 +38,7 @@ int partition(int *array, size_t low, size_t high)
 			array[j] = array[i];
 			array[i] = temp;
 			++i;
-			print_array(array, high);
+			print_array(array, high + 1);
 		}
 	}
 	/*swap highest and lowest*/
@@ -45,7 +46,7 @@ int partition(int *array, size_t low, size_t high)
 	temp = array[i];
 	array[i] = array[high];
 	array[high] = temp;
-	print_array(array, high);
+	print_array(array, high + 1);
 	return (i);
 }
 /**
@@ -61,6 +62,7 @@ void lomuto(int *array, size_t low, size_t high)
 	if (low < high)
 	{
 		val = partition(array, low, high);
+		printf("val is %d\n", val);
 		/*lomuto(array, low, val - 1);*/
 		lomuto(array, val + 1, high);
 	}
