@@ -25,9 +25,8 @@ void quick_sort(int *array, size_t size);
 void lomuto(int *array, int low, int high, size_t size);
 int partition(int *array, int low, int high, size_t size);
 
-/*void quickSort(int *array, int start, int end, size_t size);
-int partition(int *array, int start, int end, size_t size);
-void swap(int* one, int* two);
-void quick_sort(int *array, size_t size);*/
+void quick_sort_hoare(int *array, size_t size);
+void hoare(int *array, int low, int high, size_t size);
+int hoare_partition(int *array, int low, int high, size_t size);
 
 #endif
